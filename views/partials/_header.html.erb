@@ -1,0 +1,22 @@
+
+<header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to "Insta", '#', id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+           <li><a href="/about">Home</a></li>
+           <li><a href="/contact">Help</a></li>
+           <% if signed_in? %>
+           <li><%= link_to "Logout", logout_path, method: :delete %></li>
+         <% else %>
+           <li><%= link_to "Login", login_path %></li>
+         <% end %>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    
